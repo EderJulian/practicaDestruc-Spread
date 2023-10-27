@@ -77,9 +77,41 @@ const pokemonFusionado = {...bulbasaur,...pikachu};
 sumAllNumbers(6, 8, 2, 3, 1); //20
 sumAllNumbers(11, 3, 12); //26 
 
+function sumAllNumbers(...allNumbers) {
+    let result = 0;
+    for (let i = 0; i < allNumbers.length; i++) {
+        result += allNumbers[i];
+        console.log(allNumbers[i]);
+    }
+    console.log("Resultado de la suma" + result);
+}
+
 
 addOnlyNums(1, 'perro', 2, 4); //7
 
+function addOnlyNums(...allArray) {
+    const allArrayTemp = [...allArray];
+    let filtered;
+    let result = 0;
+    filtered = allArrayTemp.filter(Number.isInteger);
+    console.log(filtered);
+    for (let i = 0; i < filtered.length; i++) {
+        console.log(filtered[i]);
+        result += filtered[i];
+    }
+    console.log(result)
+}
 
-countTheArgs('gato', 'perro'); //2
-countTheArgs('gato', 'perro', 'pollo', 'oso'); //4
+
+countTheArgs('gato', 'perro'); 
+countTheArgs('gato', 'perro', 'pollo', 'oso'); 
+
+
+function countTheArgs(...args) {
+    return args.length;
+}
+
+
+console.log(countTheArgs('gato', 'perro')); 
+console.log(countTheArgs('gato', 'perro', 'pollo', 'oso')); 
+
